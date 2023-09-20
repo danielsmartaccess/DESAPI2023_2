@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pessoa>
+    <nome>João</nome>
+    <idade>20</idade>
+    <formacoes>
+        <formacao>
+            <nome>ADS</nome>
+            <ano>2013</ano>
+        </formacao>
+        <formacao>
+            <nome>Ciência da Computação</nome>
+            <ano>2015</ano>
+        </formacao>
+    </formacoes>
+    
+</pessoa>
