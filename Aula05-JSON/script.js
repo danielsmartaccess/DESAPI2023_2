@@ -22,7 +22,7 @@ function buscarProdutos(){
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if( this.readyState == 4 && this.status == 200){
-            conteudo = "<table style='border: 2px solid orange;'>";
+            conteudo = "<table border: '1, solid orange;'>";
             conteudo += "  <tr> " ;
             conteudo += "       <th>Código</th>" ;
             conteudo += "       <th>Nome</th>" ;
