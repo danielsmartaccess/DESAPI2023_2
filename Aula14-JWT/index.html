@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+</head>
+<body>
+
+<div>
+  <input type="text" id="username" placeholder="Nome de usuário">
+  <input type="password" id="password" placeholder="Senha">
+  <button onclick="login()">Login</button>
+</div>
+
+<script>
+  function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ user: username, password: password }),
+    })
+    .then(response => {
+      if (response.ok) return response.json();
+      throw new Error('Falha ao autenticar');
+    })
+    .then(data => {
+      localStorage.setItem('token', data.token); // Armazenar o token no armazenamento local
+      alert('Login efetuado com sucesso!');
+    })
+    .catch(error => {
+      alert(error.message);
+    });
+  }
+</script>
+
+</body>
+</html>
